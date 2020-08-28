@@ -7,11 +7,11 @@
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="PluginPrinter">
-                <param name="android-package" value="cordova-plugin-saurusprinter.PluginPrinter" />
+                <param name="android-package" value="cordova.plugin.saurusprinter.PluginPrinter" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
-        <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova-plugin-saurusprinter/PluginPrinter" />
+        <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova.plugin.saurusprinter/PluginPrinter" />
     </platform>
 </plugin>
