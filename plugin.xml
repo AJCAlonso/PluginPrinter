@@ -13,5 +13,6 @@
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
+        <resource-file src="libs/sauruspos-debug.aar" target="libs/sauruspos-debug.aar" />
     </platform>
 </plugin>
