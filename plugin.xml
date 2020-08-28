@@ -2,7 +2,7 @@
 <plugin id="cordova.plugin.saurusprinter" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>PluginPrinter</name>
     <js-module name="PluginPrinter" src="www/PluginPrinter.js">
-        <clobbers target="cordova.plugins.PluginPrinter" />
+        <clobbers target="PluginPrinter" />
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
@@ -12,6 +12,6 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
-        <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova.plugin.saurusprinter/PluginPrinter" />
+        <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
     </platform>
 </plugin>
