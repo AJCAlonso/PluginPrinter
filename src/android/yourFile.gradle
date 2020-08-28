@@ -6,7 +6,6 @@ repositories{
 }
 
 dependencies {
-   compile(name:'sauruspos-debug', ext:'aar')
    compile(name:'saurusframework-debug', ext:'aar')
 }
 
