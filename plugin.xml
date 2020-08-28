@@ -15,6 +15,6 @@
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
         
         <framework src="src/android/yourFile.gradle" custom="true" type="gradleReference" />
-        <resource-file src="libs/saurusframework-debug.aar" target="libs/saurusframework-debug.aar" />
+        <resource-file src="libs/sauruspos-debug.aar" target="libs/sauruspos-debug.aar" />
     </platform>
 </plugin>
