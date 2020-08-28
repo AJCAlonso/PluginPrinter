@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import br.com.saurus.sauruspos;
+import br.com.saurus.sauruspos.Equipamento;
 //import br.com.saurus.saurusframework.CallBackEvent;
 //import br.com.saurus.sauruspos.connection.UsbConnection;
 //import br.com.saurus.sauruspos.connection.UsbPrintersConnections;
