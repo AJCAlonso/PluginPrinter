@@ -7,7 +7,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import br.com.saurus.sauruspos;
+import br.com.saurus.saurusframework.CallBackEvent;
+import br.com.saurus.sauruspos.connection.UsbConnection;
+import br.com.saurus.sauruspos.connection.UsbPrintersConnections;
+import br.com.saurus.sauruspos.modelos.POS_A910.Registro_Imprimir;
+import br.com.saurus.sauruspos.modelos.TradutorImpressao;
 
 /**
  * This class echoes a string called from JavaScript.
