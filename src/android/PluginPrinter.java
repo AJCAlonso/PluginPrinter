@@ -8,17 +8,19 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-import br.com.saurus.sauruspos.Equipamento;
+//import br.com.saurus.sauruspos.Equipamento;
 //import br.com.saurus.saurusframework.CallBackEvent;
 //import br.com.saurus.sauruspos.connection.UsbConnection;
 //import br.com.saurus.sauruspos.connection.UsbPrintersConnections;
 //import br.com.saurus.sauruspos.modelos.POS_A910.Registro_Imprimir;
 //import br.com.saurus.sauruspos.modelos.TradutorImpressao;
-
+import br.com.saurus.sauruspos.Equipamento;
 /**
  * This class echoes a string called from JavaScript.
  */
 public class PluginPrinter extends CordovaPlugin {
+    
+    final Equipamento equip = new Equipamento();
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
