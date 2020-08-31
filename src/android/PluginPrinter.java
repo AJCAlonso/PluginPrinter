@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.widget.Toast;
+
 
 //import br.com.saurus.sauruspos.Equipamento;
 //import br.com.saurus.saurusframework.CallBackEvent;
@@ -42,10 +44,10 @@ public class PluginPrinter extends CordovaPlugin {
         String xModeloEquipamento = "POS_A9X0";
         String xPortaEquipamento = "";
 
-        //final Activity xActivity = getCurrentActivity();
+        final Activity xActivity = cordova.getActivity();
         final String maisTexto = "Olha só";
 
-        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) cordova.getActivity(), new CallBackEvent() {
+        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
             @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
