@@ -12,7 +12,7 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
-        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-minSdkVersion" value="21" />
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
         
         <framework src="src/android/yourFile.gradle" custom="true" type="gradleReference" />
