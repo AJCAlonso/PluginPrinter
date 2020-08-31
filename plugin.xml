@@ -19,11 +19,11 @@
         <resource-file src="libs/nexgo-smartpos-sdk-v2.0.9.aar" target="libs/nexgo-smartpos-sdk-v2.0.9.aar" />
         <resource-file src="libs/minipdvm8.aar" target="libs/minipdvm8.aar" />
         <resource-file src="libs/gedi.aar" target="libs/gedi.aar" />
-        <resource-file src="libs/NeptuneLiteApi_V3.07.01_20190808.aar" target="libs/NeptuneLiteApi_V3.07.01_20190808.aar" />
+        <resource-file src="libs/NeptuneLiteApi_V3.07.01_20190808.jar" target="libs/NeptuneLiteApi_V3.07.01_20190808.jar" />
         <resource-file src="libs/e1-v1.0.3-release.aar" target="libs/e1-v1.0.3-release.aar" />
         <resource-file src="libs/usdk-vector-printing-1.2.1.aar" target="libs/usdk-vector-printing-1.2.1.aar" />
         <resource-file src="libs/sauruspos-debug.aar" target="libs/sauruspos-debug.aar" />
-        <resource-file src="libs/saurusframework-debug.aar" target="libs/saurusframework-debug.aar" />
+        <resource-file src="libs/saurusframework-debug.jar" target="libs/saurusframework-debug.jar" />
 
     </platform>
 </plugin>
