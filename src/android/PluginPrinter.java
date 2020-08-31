@@ -15,6 +15,7 @@ import org.json.JSONObject;
 //import br.com.saurus.sauruspos.modelos.POS_A910.Registro_Imprimir;
 //import br.com.saurus.sauruspos.modelos.TradutorImpressao;
 import br.com.saurus.sauruspos.Equipamento;
+import br.com.saurus.saurusframework.CallBackEvent;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -33,10 +34,40 @@ public class PluginPrinter extends CordovaPlugin {
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            callbackContext.success(message);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
+        // if (message != null && message.length() > 0) {
+        //     callbackContext.success(message);
+        // } else {
+        //     callbackContext.error("Expected one non-empty string argument.");
+        // }
+        String xModeloEquipamento = "POS_A9X0";
+        String xPortaEquipamento = "";
+
+        //final Activity xActivity = getCurrentActivity();
+        final String maisTexto = "Olha só";
+
+        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) cordova.getActivity(), new CallBackEvent() {
+            @Override
+            public <T> void Metodo(int i, String s, T t) {
+                if (i == 0) {
+                    equip.Imprimir(maisTexto, new CallBackEvent() {
+                        @Override
+                        public <T> void Metodo(int i2, String s2, T t2) {
+                            Toast.makeText(
+                                    xActivity,
+                                    s2,
+                                    Toast.LENGTH_LONG
+                            ).show();
+                        }
+                    });
+
+                } else {
+                    Toast.makeText(
+                            xActivity,
+                            "Erro ao gerar a via de fidelidade: Detalhe: "+s,
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            }
+        });
     }
 }
