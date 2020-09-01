@@ -94,9 +94,7 @@ public class PluginPrinter extends CordovaPlugin {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            e.printStackTrace();
-        }
+        } 
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
