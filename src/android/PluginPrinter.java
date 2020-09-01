@@ -66,7 +66,6 @@ public class PluginPrinter extends CordovaPlugin {
                                     Toast.LENGTH_LONG
                             ).show();
                             callbackContext.success(s2);
-                        }
                     });
 
                 } else {
