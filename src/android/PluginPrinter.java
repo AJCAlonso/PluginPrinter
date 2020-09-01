@@ -58,7 +58,7 @@ public class PluginPrinter extends CordovaPlugin {
         String xPortaEquipamento = "";
 
         final Activity xActivity = cordova.getActivity();
-        final String maisTexto = "teste de impressao\n" +
+        final String maisTexto = "<qrCODE>www.saurus.com.br</qrCODE>\n" +
         "<cond>teste condensado</cond>\n" +
         "<expandido>Teste expandido</expandido>\n" +
         "<n>teste em negrito</n>\n" +
@@ -69,7 +69,7 @@ public class PluginPrinter extends CordovaPlugin {
         "\n" +
         "<grande>SAURUS TECNOLOGIA</grande>\n" +
         "\n" +
-        "<qrCODE>www.saurus.com.br</qrCODE>\n" +
+        "teste de impressao\n" +
         "\n" +
         "<barcode altura=\"25\" largura=\"0\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
         "\n" +
