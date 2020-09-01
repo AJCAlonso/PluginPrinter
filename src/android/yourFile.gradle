@@ -25,7 +25,7 @@ dependencies {
     compile(name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
     compile(name:'minipdvm8', ext:'aar')
     compile(name:'gedi', ext:'aar')
-    provided files('libs/NeptuneLiteApi_V3.07.01_20190808.jar')
+    compile(name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
     compile(name:'e1-v1.0.3-release', ext:'aar')
     compile(name:'usdk-vector-printing-1.2.1', ext:'jar')
     compile(name:'sauruspos-debug', ext:'aar')
