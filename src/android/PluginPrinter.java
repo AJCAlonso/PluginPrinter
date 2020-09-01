@@ -34,9 +34,9 @@ public class PluginPrinter extends CordovaPlugin {
     
     //final Equipamento equip = new Equipamento();
 
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-    }
+    // public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+    //     super.initialize(cordova, webView);
+    // }
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
