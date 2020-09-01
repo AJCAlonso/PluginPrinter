@@ -72,21 +72,21 @@ public class PluginPrinter extends CordovaPlugin {
                             equip.Imprimir(maisTexto, new CallBackEvent() {
                                 @Override
                                 public <T> void Metodo(int i2, String s2, T t2) {
-                                    Toast.makeText(
-                                            xActivity,
-                                            "texto: " + s2,
-                                            Toast.LENGTH_LONG
-                                    ).show();
+                                    // Toast.makeText(
+                                    //         xActivity,
+                                    //         "texto: " + s2,
+                                    //         Toast.LENGTH_LONG
+                                    // ).show();
                                     callbackContext.success(s2);
                                 }
                             });
 
                         } else {
-                            Toast.makeText(
-                                    xActivity,
-                                    "Erro ao gerar a via de fidelidade: Detalhe: "+s,
-                                    Toast.LENGTH_LONG
-                            ).show();
+                            // Toast.makeText(
+                            //         xActivity,
+                            //         s,
+                            //         Toast.LENGTH_LONG
+                            // ).show();
                             callbackContext.error(s);
                         }
                     }
