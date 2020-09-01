@@ -9,7 +9,7 @@
             <feature name="PluginPrinter">
                 <param name="android-package" value="cordova.plugin.saurusprinter.PluginPrinter" />
             </feature>
-            <preference name="android-minSdkVersion" value="21" />
+            <preference name="android-minSdkVersion" value="19" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
         </config-file>
