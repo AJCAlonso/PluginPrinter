@@ -58,7 +58,7 @@ public class PluginPrinter extends CordovaPlugin {
         String xPortaEquipamento = "";
 
         final Activity xActivity = cordova.getActivity();
-        final String maisTexto = "Olha só";
+        final String maisTexto = "<br><center>texto a ser impresso</center><br><esquerda>texto</esquerda><br>";
 
         final Equipamento equip = new Equipamento();
 
