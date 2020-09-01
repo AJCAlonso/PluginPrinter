@@ -40,12 +40,58 @@ public class PluginPrinter extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
+        if (action.equals("imprimir")) {
+            this.imprimir(args, callbackContext);
+            return true;
+        }
+        else if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
         }
         return false;
+    }
+
+    private void imprimir(JSONArray args, CallbackContext callbackContext) {
+
+        if (args != null) {
+            String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
+            //String xModeloEquipamento = "POS_A9X0";
+            String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
+
+            final String maisTexto = args.getJSONObject(0).getString("TextoImp");
+
+            final Activity xActivity = cordova.getActivity();
+
+            final Equipamento equip = new Equipamento();
+
+            equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+                    @Override
+                public <T> void Metodo(int i, String s, T t) {
+                    if (i == 0) {
+                        equip.Imprimir(maisTexto, new CallBackEvent() {
+                            @Override
+                            public <T> void Metodo(int i2, String s2, T t2) {
+                                Toast.makeText(
+                                        xActivity,
+                                        "texto: " + s2,
+                                        Toast.LENGTH_LONG
+                                ).show();
+                                callbackContext.success(s2);
+                            }
+                        });
+
+                    } else {
+                        Toast.makeText(
+                                xActivity,
+                                "Erro ao gerar a via de fidelidade: Detalhe: "+s,
+                                Toast.LENGTH_LONG
+                        ).show();
+                        callbackContext.error(s);
+                    }
+                }
+            });
+        }   
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
@@ -59,28 +105,27 @@ public class PluginPrinter extends CordovaPlugin {
         String xPortaEquipamento = "";
 
         final Activity xActivity = cordova.getActivity();
-        final String maisTexto = "teste de impressao\n" +
-        "<cond>teste condensado</cond>\n" +
-        "<expandido>Teste expandido</expandido>\n" +
-        "<n>teste em negrito</n>\n" +
-        "<direita>A direita\n" +
-        "<centro>Centralizado\n" +
-        "<esquerda>A Esquerda\n" +
-        "<gigante>XYZ</gigante>\n" +
-        "\n" +
-        "<grande>SAURUS TECNOLOGIA</grande>\n" +
-        "\n" +
-        "<qrCODE>www.saurus.com.br</qrCODE>\n" +
-        "\n" +
-        "<barcode altura=\"25\" largura=\"100\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
-        "\n" +
-        "\n" +
-        "\n";
+        // final String maisTexto = "teste de impressao\n" +
+        // "<cond>teste condensado</cond>\n" +
+        // "<expandido>Teste expandido</expandido>\n" +
+        // "<n>teste em negrito</n>\n" +
+        // "<direita>A direita\n" +
+        // "<centro>Centralizado\n" +
+        // "<esquerda>A Esquerda\n" +
+        // "<gigante>XYZ</gigante>\n" +
+        // "\n" +
+        // "<grande>SAURUS TECNOLOGIA</grande>\n" +
+        // "\n" +
+        // "<qrCODE>www.saurus.com.br</qrCODE>\n" +
+        // "\n" +
+        // "<barcode altura=\"25\" largura=\"100\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
+        // "\n" +
+        // "\n" +
+        // "\n";
 
         final Equipamento equip = new Equipamento();
 
         equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-        //equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, cordova.getActivity(), new CallBackEvent() {
                 @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
@@ -88,8 +133,8 @@ public class PluginPrinter extends CordovaPlugin {
                         @Override
                         public <T> void Metodo(int i2, String s2, T t2) {
                             Toast.makeText(
-                                    //xActivity,
-                                    webView.getContext(),
+                                    xActivity,
+                                    //webView.getContext(),
                                     "texto: " + s2,
                                     Toast.LENGTH_LONG
                             ).show();
