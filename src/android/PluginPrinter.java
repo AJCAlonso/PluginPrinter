@@ -26,7 +26,7 @@ import br.com.saurus.saurusframework.CallBackEvent;
  */
 public class PluginPrinter extends CordovaPlugin {
     
-    final Equipamento equip = new Equipamento();
+    //final Equipamento equip = new Equipamento();
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
@@ -54,16 +54,12 @@ public class PluginPrinter extends CordovaPlugin {
         final Activity xActivity = cordova.getActivity();
         final String maisTexto = "Olha só";
 
+        final Equipamento equip = new Equipamento();
+
         equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
             @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
-                    Toast.makeText(
-                        //xActivity,
-                        webView.getContext(),
-                        equip,
-                        Toast.LENGTH_LONG
-                ).show();
                     equip.Imprimir(maisTexto, new CallBackEvent() {
                         @Override
                         public <T> void Metodo(int i2, String s2, T t2) {
