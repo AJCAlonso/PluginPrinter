@@ -58,7 +58,23 @@ public class PluginPrinter extends CordovaPlugin {
         String xPortaEquipamento = "";
 
         final Activity xActivity = cordova.getActivity();
-        final String maisTexto = "<br><center>texto a ser impresso</center><br><esquerda>texto</esquerda><br>";
+        final String maisTexto = "teste de impressao\n" +
+        "<cond>teste condensado</cond>\n" +
+        "<expandido>Teste expandido</expandido>\n" +
+        "<n>teste em negrito</n>\n" +
+        "<direita>A direita\n" +
+        "<centro>Centralizado\n" +
+        "<esquerda>A Esquerda\n" +
+        "<gigante>XYZ</gigante>\n" +
+        "\n" +
+        "<grande>SAURUS TECNOLOGIA</grande>\n" +
+        "\n" +
+        "<qrCODE>www.saurus.com.br</qrCODE>\n" +
+        "\n" +
+        "<barcode altura=\"25\" largura=\"0\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
+        "\n" +
+        "\n" +
+        "\n";
 
         final Equipamento equip = new Equipamento();
 
@@ -67,7 +83,7 @@ public class PluginPrinter extends CordovaPlugin {
                 @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
-                    equip.Imprimir(message, new CallBackEvent() {
+                    equip.Imprimir(maisTexto, new CallBackEvent() {
                         @Override
                         public <T> void Metodo(int i2, String s2, T t2) {
                             Toast.makeText(
