@@ -56,8 +56,9 @@ public class PluginPrinter extends CordovaPlugin {
                         @Override
                         public <T> void Metodo(int i2, String s2, T t2) {
                             Toast.makeText(
-                                    xActivity,
-                                    s2,
+                                    //xActivity,
+                                    webView.getContext(),
+                                    "texto: " + s2,
                                     Toast.LENGTH_LONG
                             ).show();
                             callbackContext.success(maisTexto);
