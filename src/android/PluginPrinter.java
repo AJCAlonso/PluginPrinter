@@ -54,7 +54,7 @@ public class PluginPrinter extends CordovaPlugin {
         // } else {
         //     callbackContext.error("Expected one non-empty string argument.");
         // }
-        String xModeloEquipamento = "POS_SUNMI;
+        String xModeloEquipamento = "POS_SUNMI";
         String xPortaEquipamento = "";
 
         final Activity xActivity = cordova.getActivity();
