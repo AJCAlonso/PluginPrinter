@@ -6,21 +6,6 @@ repositories{
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.0"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     compile(name:'sunmidevices', ext:'aar')
     compile(name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
     compile(name:'minipdvm8', ext:'aar')
