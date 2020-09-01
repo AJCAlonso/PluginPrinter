@@ -53,45 +53,50 @@ public class PluginPrinter extends CordovaPlugin {
     }
 
     private void imprimir(JSONArray args, CallbackContext callbackContext) {
+        try {
+            if (args != null) {
+                String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
+                //String xModeloEquipamento = "POS_A9X0";
+                String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
 
-        if (args != null) {
-            String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
-            //String xModeloEquipamento = "POS_A9X0";
-            String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
+                final String maisTexto = args.getJSONObject(0).getString("TextoImp");
 
-            final String maisTexto = args.getJSONObject(0).getString("TextoImp");
+                final Activity xActivity = cordova.getActivity();
 
-            final Activity xActivity = cordova.getActivity();
+                final Equipamento equip = new Equipamento();
 
-            final Equipamento equip = new Equipamento();
+                equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+                        @Override
+                    public <T> void Metodo(int i, String s, T t) {
+                        if (i == 0) {
+                            equip.Imprimir(maisTexto, new CallBackEvent() {
+                                @Override
+                                public <T> void Metodo(int i2, String s2, T t2) {
+                                    Toast.makeText(
+                                            xActivity,
+                                            "texto: " + s2,
+                                            Toast.LENGTH_LONG
+                                    ).show();
+                                    callbackContext.success(s2);
+                                }
+                            });
 
-            equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-                    @Override
-                public <T> void Metodo(int i, String s, T t) {
-                    if (i == 0) {
-                        equip.Imprimir(maisTexto, new CallBackEvent() {
-                            @Override
-                            public <T> void Metodo(int i2, String s2, T t2) {
-                                Toast.makeText(
-                                        xActivity,
-                                        "texto: " + s2,
-                                        Toast.LENGTH_LONG
-                                ).show();
-                                callbackContext.success(s2);
-                            }
-                        });
-
-                    } else {
-                        Toast.makeText(
-                                xActivity,
-                                "Erro ao gerar a via de fidelidade: Detalhe: "+s,
-                                Toast.LENGTH_LONG
-                        ).show();
-                        callbackContext.error(s);
+                        } else {
+                            Toast.makeText(
+                                    xActivity,
+                                    "Erro ao gerar a via de fidelidade: Detalhe: "+s,
+                                    Toast.LENGTH_LONG
+                            ).show();
+                            callbackContext.error(s);
+                        }
                     }
-                }
-            });
-        }   
+                });
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            e.printStackTrace();
+        }
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
