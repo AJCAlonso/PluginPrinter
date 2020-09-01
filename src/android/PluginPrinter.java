@@ -58,9 +58,7 @@ public class PluginPrinter extends CordovaPlugin {
             @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
-                    equip.Imprimir(message, new CallBackEvent() {
-                        @Override
-                        public <T> void Metodo(int i2, String s2, T t2) {
+                    equip.Imprimir(message, (i2, s2, t2) -> {
                             Toast.makeText(
                                     //xActivity,
                                     webView.getContext(),
