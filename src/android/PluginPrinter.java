@@ -61,7 +61,7 @@ public class PluginPrinter extends CordovaPlugin {
                                     "texto: " + s2,
                                     Toast.LENGTH_LONG
                             ).show();
-                            callbackContext.success(maisTexto);
+                            callbackContext.success(s2);
                         }
                     });
 
