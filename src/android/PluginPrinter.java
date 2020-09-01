@@ -12,6 +12,12 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 
 //import br.com.saurus.sauruspos.Equipamento;
 //import br.com.saurus.saurusframework.CallBackEvent;
@@ -56,8 +62,8 @@ public class PluginPrinter extends CordovaPlugin {
 
         final Equipamento equip = new Equipamento();
 
-        // equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, cordova.getActivity(), new CallBackEvent() {
+        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+        //equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, cordova.getActivity(), new CallBackEvent() {
                 @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
