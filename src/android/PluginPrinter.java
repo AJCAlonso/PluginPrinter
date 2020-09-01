@@ -12,11 +12,11 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+// import androidx.appcompat.app.AppCompatActivity;
+// import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+// import com.google.android.material.floatingactionbutton.FloatingActionButton;
+// import com.google.android.material.snackbar.Snackbar;
 
 
 //import br.com.saurus.sauruspos.Equipamento;
