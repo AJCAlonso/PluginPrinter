@@ -56,8 +56,9 @@ public class PluginPrinter extends CordovaPlugin {
 
         final Equipamento equip = new Equipamento();
 
-        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-            @Override
+        // equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, cordova.getActivity(), new CallBackEvent() {
+                @Override
             public <T> void Metodo(int i, String s, T t) {
                 if (i == 0) {
                     equip.Imprimir(maisTexto, new CallBackEvent() {
