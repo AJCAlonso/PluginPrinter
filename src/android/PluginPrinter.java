@@ -71,7 +71,7 @@ public class PluginPrinter extends CordovaPlugin {
         "\n" +
         "<qrCODE>www.saurus.com.br</qrCODE>\n" +
         "\n" +
-        "<barcode altura=\"25\" largura=\"0\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
+        "<barcode altura=\"25\" largura=\"100\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
         "\n" +
         "\n" +
         "\n";
