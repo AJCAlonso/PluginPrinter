@@ -21,13 +21,8 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
-    compile(name:'sunmidevices', ext:'aar')
-    compile(name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
-    compile(name:'minipdvm8', ext:'aar')
-    compile(name:'gedi', ext:'aar')
     compile(name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
-    compile(name:'e1-v1.0.3-release', ext:'aar')
-    compile(name:'usdk-vector-printing-1.2.1', ext:'jar')
+
     compile(name:'sauruspos-debug', ext:'aar')
     compile(name:'saurusframework-debug', ext:'aar')
     { exclude group: 'com.google.zxing' }   
