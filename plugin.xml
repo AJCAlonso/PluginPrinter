@@ -18,6 +18,7 @@
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
         
         <framework src="src/android/yourFile.gradle" custom="true" type="gradleReference" />
+        <resource-file src="libs/sunmidevices.aar" target="libs/sunmidevices.aar" />
         <resource-file src="libs/NeptuneLiteApi_V3.07.01_20190808.jar" target="libs/NeptuneLiteApi_V3.07.01_20190808.jar" />
 
         <resource-file src="libs/sauruspos-debug.aar" target="libs/sauruspos-debug.aar" />
