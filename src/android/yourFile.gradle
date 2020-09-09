@@ -24,7 +24,7 @@ dependencies {
     implementation (name:'minipdvm8', ext:'aar')
 
     implementation (name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
-    implementation (name:'e1-v1.0.3-release', ext:'aar')
+
     implementation (name:'usdk-vector-printing-1.2.1', ext:'jar')
     implementation (name:'sauruspos-debug', ext:'aar')
     implementation (name:'saurusframework-debug', ext:'aar')
