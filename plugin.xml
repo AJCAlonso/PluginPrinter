@@ -13,6 +13,8 @@
             <preference name="android-targetSdkVersion" value="29" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
         </config-file>
 
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
