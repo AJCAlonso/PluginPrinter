@@ -78,5 +78,6 @@ buildscript {
 
 configurations {
     implementation.exclude group: 'com.google.zxing'
+    implementation.exclude group: 'com.xcheng'
 }
 
