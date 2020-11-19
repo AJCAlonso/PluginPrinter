@@ -25,7 +25,7 @@ dependencies {
     implementation (name:'sunmidevices', ext:'aar') { exclude group: 'com.google.zxing' }
     implementation (name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
     implementation (name:'minipdvm8', ext:'aar')
-    implementation (name:'gedi', ext:'aar')
+    // implementation (name:'gedi', ext:'aar')
     implementation (name:'libgedi-0.200115.1-gpos800-payment-release', ext:'aar')
     implementation (name:'e1-v1.0.3-release', ext:'aar')
     implementation (name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
