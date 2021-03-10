@@ -9,7 +9,7 @@
             <feature name="PluginPrinter">
                 <param name="android-package" value="cordova.plugin.saurusprinter.PluginPrinter" />
             </feature>
-            <preference name="android-minSdkVersion" value="19" />
+            <preference name="android-minSdkVersion" value="21" />
             <preference name="android-targetSdkVersion" value="29" />
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
@@ -21,7 +21,7 @@
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
         
         <framework src="src/android/yourFile.gradle" custom="true" type="gradleReference" />
-        <!-- <resource-file src="libs/sunmidevices.aar" target="libs/sunmidevices.aar" /> -->
+        <resource-file src="libs/sunmidevices.aar" target="libs/sunmidevices.aar" />
         <resource-file src="libs/nexgo-smartpos-sdk-v2.0.9.aar" target="libs/nexgo-smartpos-sdk-v2.0.9.aar" />
         <resource-file src="libs/minipdvm8.aar" target="libs/minipdvm8.aar" />
         <resource-file src="libs/gedi.aar" target="libs/gedi.aar" />
