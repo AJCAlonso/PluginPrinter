@@ -22,7 +22,7 @@ dependencies {
 
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
-    implementation (name:'sunmidevices', ext:'aar') { exclude group: 'com.google.zxing' }
+    // implementation (name:'sunmidevices', ext:'aar') { exclude group: 'com.google.zxing' }
     implementation (name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
     implementation (name:'minipdvm8', ext:'aar')
     implementation (name:'gedi', ext:'aar') 
