@@ -3,43 +3,47 @@ repositories{
     flatDir {
       dirs 'src/main/libs'
     }
-    maven { url 'https://github.com/pagseguro/PlugPagServiceWrapper/raw/master'}
-    maven { url 'https://github.com/pagseguromaster/plugpag/raw/master/3.x/android'}
+   maven { url 'https://github.com/pagseguro/PlugPagServiceWrapper/raw/master' }
+   maven { url 'https://github.com/pagseguromaster/plugpag/raw/master/3.x/android' }
+   maven { url "https://suporte.saurus.net.br/maven/" }
+   maven { url "https://packagecloud.io/priv/${stonetoken}/stone/pos-android/maven2" }
 }
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
-    implementation 'com.android.support:design:27.1.0'
-    implementation 'br.com.uol.pagseguro:plugpag:3.0.0'
-    implementation 'br.com.uol.pagseguro.plugpagservice.wrapper:wrapper:1.13.0'
+    // implementation 'androidx.appcompat:appcompat:1.2.0'
+    // implementation 'com.google.android.material:material:1.2.0'
+    // implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    // implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    // implementation 'androidx.navigation:navigation-ui:2.3.0'
+    // implementation 'com.android.support:design:27.1.0'
+    // implementation 'br.com.uol.pagseguro:plugpag:3.0.0'
+    // implementation 'br.com.uol.pagseguro.plugpagservice.wrapper:wrapper:1.13.0'
+    implementation ('br.com.saurus:saurusframework:1.0.0')
+    implementation ('br.com.saurus:sauruspos:1.0.0') {exclude group: 'org.jetbrains.kotlinx'}
 
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // testImplementation 'junit:junit:4.13'
+    // androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    // androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.0"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.0"
+    // implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
 
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    // implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
-    implementation (name:'sunmidevices', ext:'aar') { exclude group: 'com.google.zxing' }
-    implementation (name:'gedi700', ext:'aar') 
-    implementation (name:'gedi800', ext:'aar') { exclude group: 'com.xcheng' }
-    implementation (name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
-    // implementation (name:'minipdvm8', ext:'aar')
-    // implementation (name:'gedi', ext:'aar') 
-    // implementation (name:'libgedi-0.200115.1-gpos800-payment-release', ext:'aar') { exclude group: 'com.xcheng' }
-    // implementation (name:'e1-v1.0.3-release', ext:'aar')
-    // implementation (name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
+    // implementation (name:'sunmidevices', ext:'aar') { exclude group: 'com.google.zxing' }
+    // implementation (name:'gedi700', ext:'aar') 
+    // implementation (name:'gedi800', ext:'aar') { exclude group: 'com.xcheng' }
+    // implementation (name:'nexgo-smartpos-sdk-v2.0.9', ext:'aar')
+    // // implementation (name:'minipdvm8', ext:'aar')
+    // // implementation (name:'gedi', ext:'aar') 
+    // // implementation (name:'libgedi-0.200115.1-gpos800-payment-release', ext:'aar') { exclude group: 'com.xcheng' }
+    // // implementation (name:'e1-v1.0.3-release', ext:'aar')
+    // // implementation (name:'NeptuneLiteApi_V3.07.01_20190808', ext:'jar')
 
-    // implementation (name:'usdk-vector-printing-1.2.1', ext:'jar')
-    implementation (name:'sauruspos-debug', ext:'aar')
-    implementation (name:'saurusframework-debug', ext:'aar')
+    // // implementation (name:'usdk-vector-printing-1.2.1', ext:'jar')
+    // implementation (name:'sauruspos-debug', ext:'aar')
+    // implementation (name:'saurusframework-debug', ext:'aar')
       
 }
 
@@ -68,23 +72,27 @@ android {
     }
 
     packagingOptions {
-      exclude 'META-INF/NOTICE'
-      exclude 'META-INF/LICENSE'
+        doNotStrip "**/*.so"
+        exclude 'META-INF/*'
+    //   exclude 'META-INF/NOTICE'
+    //   exclude 'META-INF/LICENSE'
     }
 }
 
 buildscript {
+    ext.stonetoken = '2b5291098b46f6994b813544ae2a6ed2f165cee368343f11'
+
     repositories {
         mavenCentral()
     }
 
-    dependencies {
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0'
-    }
+    // dependencies {
+    //     classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0'
+    // }
 }
 
 configurations {
-    implementation.exclude group: 'com.google.zxing'
+    // implementation.exclude group: 'com.google.zxing'
     // implementation.exclude group: 'com.xcheng'
 }
 

@@ -25,18 +25,12 @@
         <source-file src="src/android/PluginPrinter.java" target-dir="src/cordova/plugin/saurusprinter/PluginPrinter" />
         
         <framework src="src/android/yourFile.gradle" custom="true" type="gradleReference" />
-        <resource-file src="libs/sunmidevices.aar" target="libs/sunmidevices.aar" />
+        <!-- <resource-file src="libs/sunmidevices.aar" target="libs/sunmidevices.aar" />
         <resource-file src="libs/nexgo-smartpos-sdk-v2.0.9.aar" target="libs/nexgo-smartpos-sdk-v2.0.9.aar" />
-        <!-- <resource-file src="libs/minipdvm8.aar" target="libs/minipdvm8.aar" /> -->
         <resource-file src="libs/gedi700.aar" target="libs/gedi700.aar" />
         <resource-file src="libs/gedi800.aar" target="libs/gedi800.aar" />
-        <!-- <resource-file src="libs/libgedi-0.200115.1-gpos800-payment-release.aar" target="libs/libgedi-0.200115.1-gpos800-payment-release.aar" /> -->
-        <!-- <resource-file src="libs/e1-v1.0.3-release.aar" target="libs/e1-v1.0.3-release.aar" /> -->
-        <!-- <resource-file src="libs/NeptuneLiteApi_V3.07.01_20190808.jar" target="libs/NeptuneLiteApi_V3.07.01_20190808.jar" /> -->
-
-        <!-- <resource-file src="libs/usdk-vector-printing-1.2.1.jar" target="libs/usdk-vector-printing-1.2.1.jar" /> -->
         <resource-file src="libs/sauruspos-debug.aar" target="libs/sauruspos-debug.aar" />
-        <resource-file src="libs/saurusframework-debug.aar" target="libs/saurusframework-debug.aar" />
+        <resource-file src="libs/saurusframework-debug.aar" target="libs/saurusframework-debug.aar" /> -->
 
     </platform>
 </plugin>
