@@ -47,7 +47,7 @@ public class PluginPrinter extends CordovaPlugin {
         }
         else if (action.equals("coolMethod")) {
             String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
+            // this.coolMethod(message, callbackContext);
             return true;
         }
         return false;
