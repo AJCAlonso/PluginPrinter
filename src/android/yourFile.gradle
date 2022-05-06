@@ -20,7 +20,7 @@ dependencies {
     // implementation 'br.com.uol.pagseguro:plugpag:3.0.0'
     // implementation 'br.com.uol.pagseguro.plugpagservice.wrapper:wrapper:1.13.0'
     implementation ('br.com.saurus:saurusframework:1.0.0')
-    implementation ('br.com.saurus:sauruspos:1.0.0') {exclude group: 'org.jetbrains.kotlinx'}
+    implementation ('br.com.saurus:sauruspos:1.1.17') {exclude group: 'org.jetbrains.kotlinx'}
 
     // testImplementation 'junit:junit:4.13'
     // androidTestImplementation 'androidx.test.ext:junit:1.1.2'
