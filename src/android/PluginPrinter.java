@@ -27,6 +27,7 @@ import android.widget.Toast;
 //import br.com.saurus.sauruspos.modelos.TradutorImpressao;
 import br.com.saurus.sauruspos.Equipamento;
 import br.com.saurus.saurusframework.CallBackEvent;
+import br.com.saurus.sauruspos.modelos.ModeloEquipamento;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -52,49 +53,88 @@ public class PluginPrinter extends CordovaPlugin {
         return false;
     }
 
+    // private void imprimir(JSONArray args, CallbackContext callbackContext) {
+    //     try {
+    //         if (args != null) {
+    //             String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
+    //             //String xModeloEquipamento = "POS_A9X0";
+    //             String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
+
+    //             final String maisTexto = args.getJSONObject(0).getString("TextoImp");
+
+    //             final Activity xActivity = cordova.getActivity();
+
+    //             final Equipamento equip = new Equipamento();
+
+    //             equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+    //                     @Override
+    //                 public <T> void Metodo(int i, String s, T t) {
+    //                     if (i == 0) {
+    //                         equip.Imprimir(maisTexto, new CallBackEvent() {
+    //                             @Override
+    //                             public <T> void Metodo(int i2, String s2, T t2) {
+    //                                 // Toast.makeText(
+    //                                 //         xActivity,
+    //                                 //         "texto: " + s2,
+    //                                 //         Toast.LENGTH_LONG
+    //                                 // ).show();
+    //                                 callbackContext.success(s2);
+    //                             }
+    //                         });
+
+    //                     } else {
+    //                         // Toast.makeText(
+    //                         //         xActivity,
+    //                         //         s,
+    //                         //         Toast.LENGTH_LONG
+    //                         // ).show();
+    //                         callbackContext.error(s);
+    //                     }
+    //                 }
+    //             });
+    //         }
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     } 
+    // }
     private void imprimir(JSONArray args, CallbackContext callbackContext) {
         try {
-            if (args != null) {
-                String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
-                //String xModeloEquipamento = "POS_A9X0";
-                String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
+            String xModeloEquipamento = args.getJSONObject(0).getString("ModeloEquipamento");
+            //String xModeloEquipamento = "POS_A9X0";
+            String xPortaEquipamento = args.getJSONObject(0).getString("PortaEquipamento");
 
-                final String maisTexto = args.getJSONObject(0).getString("TextoImp");
+            final String maisTexto = args.getJSONObject(0).getString("TextoImp");
 
-                final Activity xActivity = cordova.getActivity();
+            Integer qtdColunas = 64;
 
-                final Equipamento equip = new Equipamento();
-
-                equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-                        @Override
-                    public <T> void Metodo(int i, String s, T t) {
-                        if (i == 0) {
+            ModeloEquipamento equip = new Equipamento().getEquipamento(xModeloEquipamento, this.cordova.getActivity(), xPortaEquipamento,
+                    qtdColunas);
+            equip.InicializarEquipamento(new CallBackEvent() {
+                @Override
+                public <T> void Metodo(int xRetNumero, String xRetTexto, T xRet) {
+                    try {
+                        if (xRetNumero == 1) {
+                            callbackContext.error(xRetTexto);
+                            return;
+                        } else {
                             equip.Imprimir(maisTexto, new CallBackEvent() {
-                                @Override
-                                public <T> void Metodo(int i2, String s2, T t2) {
-                                    // Toast.makeText(
-                                    //         xActivity,
-                                    //         "texto: " + s2,
-                                    //         Toast.LENGTH_LONG
-                                    // ).show();
-                                    callbackContext.success(s2);
+                                public <T> void Metodo(int xRetNumeroImp, String xRetTextoImp, T xRetImpImp) {
+                                    if (xRetNumeroImp == 1) {
+                                        callbackContext.error(xRetTextoImp);
+                                        return;
+                                    }
+                                    callbackContext.success(xRetTextoImp);
                                 }
                             });
-
-                        } else {
-                            // Toast.makeText(
-                            //         xActivity,
-                            //         s,
-                            //         Toast.LENGTH_LONG
-                            // ).show();
-                            callbackContext.error(s);
                         }
+                    } catch (Exception e) {
+                        callbackContext.error("Erro ao realizar a Impressão. Detalhe: " + e.getMessage());
                     }
-                });
-            }
+                }
+            });
         } catch (Exception e) {
-            e.printStackTrace();
-        } 
+            callbackContext.error("Erro ao realizar a Impressão. Detalhe: " + e.getMessage());
+        }
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
