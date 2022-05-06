@@ -137,62 +137,62 @@ public class PluginPrinter extends CordovaPlugin {
         }
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
-        // if (message != null && message.length() > 0) {
-        //     callbackContext.success(message);
-        // } else {
-        //     callbackContext.error("Expected one non-empty string argument.");
-        // }
-        String xModeloEquipamento = "POS_SUNMI";
-        //String xModeloEquipamento = "POS_A9X0";
-        String xPortaEquipamento = "";
+    // private void coolMethod(String message, CallbackContext callbackContext) {
+    //     // if (message != null && message.length() > 0) {
+    //     //     callbackContext.success(message);
+    //     // } else {
+    //     //     callbackContext.error("Expected one non-empty string argument.");
+    //     // }
+    //     String xModeloEquipamento = "POS_SUNMI";
+    //     //String xModeloEquipamento = "POS_A9X0";
+    //     String xPortaEquipamento = "";
 
-        final Activity xActivity = cordova.getActivity();
-        // final String maisTexto = "teste de impressao\n" +
-        // "<cond>teste condensado</cond>\n" +
-        // "<expandido>Teste expandido</expandido>\n" +
-        // "<n>teste em negrito</n>\n" +
-        // "<direita>A direita\n" +
-        // "<centro>Centralizado\n" +
-        // "<esquerda>A Esquerda\n" +
-        // "<gigante>XYZ</gigante>\n" +
-        // "\n" +
-        // "<grande>SAURUS TECNOLOGIA</grande>\n" +
-        // "\n" +
-        // "<qrCODE>www.saurus.com.br</qrCODE>\n" +
-        // "\n" +
-        // "<barcode altura=\"25\" largura=\"100\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
-        // "\n" +
-        // "\n" +
-        // "\n";
+    //     final Activity xActivity = cordova.getActivity();
+    //     // final String maisTexto = "teste de impressao\n" +
+    //     // "<cond>teste condensado</cond>\n" +
+    //     // "<expandido>Teste expandido</expandido>\n" +
+    //     // "<n>teste em negrito</n>\n" +
+    //     // "<direita>A direita\n" +
+    //     // "<centro>Centralizado\n" +
+    //     // "<esquerda>A Esquerda\n" +
+    //     // "<gigante>XYZ</gigante>\n" +
+    //     // "\n" +
+    //     // "<grande>SAURUS TECNOLOGIA</grande>\n" +
+    //     // "\n" +
+    //     // "<qrCODE>www.saurus.com.br</qrCODE>\n" +
+    //     // "\n" +
+    //     // "<barcode altura=\"25\" largura=\"100\" legenda=\"0\" orientacao=\"0\">0123456789876543210123456789876543210</barcode>\n" +
+    //     // "\n" +
+    //     // "\n" +
+    //     // "\n";
 
-        final Equipamento equip = new Equipamento();
+    //     final Equipamento equip = new Equipamento();
 
-        equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
-                @Override
-            public <T> void Metodo(int i, String s, T t) {
-                if (i == 0) {
-                    equip.Imprimir(message, new CallBackEvent() {
-                        @Override
-                        public <T> void Metodo(int i2, String s2, T t2) {
-                            Toast.makeText(
-                                    xActivity,
-                                    //webView.getContext(),
-                                    "texto: " + s2,
-                                    Toast.LENGTH_LONG
-                            ).show();
-                            callbackContext.success(s2);
-                        }
-                    });
+    //     equip.InicializarEquipamento(xModeloEquipamento, xPortaEquipamento, (Activity) xActivity, new CallBackEvent() {
+    //             @Override
+    //         public <T> void Metodo(int i, String s, T t) {
+    //             if (i == 0) {
+    //                 equip.Imprimir(message, new CallBackEvent() {
+    //                     @Override
+    //                     public <T> void Metodo(int i2, String s2, T t2) {
+    //                         Toast.makeText(
+    //                                 xActivity,
+    //                                 //webView.getContext(),
+    //                                 "texto: " + s2,
+    //                                 Toast.LENGTH_LONG
+    //                         ).show();
+    //                         callbackContext.success(s2);
+    //                     }
+    //                 });
 
-                } else {
-                    Toast.makeText(
-                            xActivity,
-                            "Erro ao gerar a via de fidelidade: Detalhe: "+s,
-                            Toast.LENGTH_LONG
-                    ).show();
-                }
-            }
-        });
-    }
+    //             } else {
+    //                 Toast.makeText(
+    //                         xActivity,
+    //                         "Erro ao gerar a via de fidelidade: Detalhe: "+s,
+    //                         Toast.LENGTH_LONG
+    //                 ).show();
+    //             }
+    //         }
+    //     });
+    // }
 }
